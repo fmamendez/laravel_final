@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Automotor;
 use Illuminate\Http\Request;
 
 class AutomotorController extends Controller
@@ -9,10 +10,12 @@ class AutomotorController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        return view('automotores.index');
+        $busqueda = $request->busqueda;
+        $automotores = Automotor::where('marca','LIKE','%'.$busqueda.'%')->orwhere('modelo','LIKE','%'.$busqueda.'%')->orwhere('patente','LIKE','%'.$busqueda.'%')->latest('id')->paginate(10);
+        return view('automotores.index',compact('automotores','busqueda'));
     }
 
     /**

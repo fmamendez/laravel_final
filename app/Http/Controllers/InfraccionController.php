@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Infraccion;
 use Illuminate\Http\Request;
 
 class InfraccionController extends Controller
@@ -9,10 +10,12 @@ class InfraccionController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         //
-        return view('infracciones.index');
+        $busqueda = $request->busqueda;
+        $infracciones = Infraccion::where('fecha','LIKE','%'.$busqueda.'%')->orwhere('tipo','LIKE','%'.$busqueda.'%')->latest('id')->paginate(10);
+        return view('infracciones.index',compact('infracciones','busqueda'));
     }
 
     /**

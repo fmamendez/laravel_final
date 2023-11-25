@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class StoreTitular extends FormRequest
+class StoreAutomotor extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,10 +23,13 @@ class StoreTitular extends FormRequest
     public function rules(): array
     {
         return [
-            'nombre' => 'required|string|max:100|min:2',
-            'apellido' => 'required|string|max:100|min:2',
-            'dni' => 'required|min:7',
-            'domicilio' => 'required|max:255',
+            'marca' => 'required|string|max:100|min:2',
+            'modelo' => 'required|string|max:100|min:2',
+            'patente' => 'required|max:15|min:6',
+            'tipo' => [
+                'required|max:255',
+                Rule::in(['standar','suv','camioneta','camion']),
+            ],
         ];
     }
 }

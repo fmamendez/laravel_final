@@ -33,6 +33,6 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-Route::resource('/titulares',TitularController::class);
-Route::resource('/automotores',AutomotorController::class);
-Route::resource('/infracciones',InfraccionController::class);
+Route::resource('/titulares',TitularController::class)->middleware('auth');
+Route::resource('/automotores',AutomotorController::class)->middleware('auth');
+Route::resource('/infracciones',InfraccionController::class)->middleware('auth');
