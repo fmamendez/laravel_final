@@ -44,7 +44,7 @@
             <tbody>
                 @foreach ($infracciones as $infraccion)
                     <tr class="bg-white dark:bg-gray-800">
-                        <td>{{ $infraccion->auto_id }}</td>
+                        <td>{{ $infraccion->automotor->patente }}</td>
                         <td>{{ $infraccion->fecha }}</td>
                         <td>{{ $infraccion->descripcion }}</td>
                         <td>{{ $infraccion->tipo }}</td>

@@ -15,11 +15,11 @@
                 @endforeach
             </select>
         </div>
-        <div class="col-span-6 sm:col-span-3">
+        <div class="col-span-6 sm:col-span-3 mt-5">
             <label for="marca" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Marca</label>
             <input type="text" name="marca" id="marca"
                 class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder="Ingrese la marca del automotor" required="" autofocus>
+                placeholder="Ingrese la marca del automotor" required="" >
         </div>
         <div class="col-span-6 sm:col-span-3 mt-5">
             <label for="modelo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Modelo</label>
@@ -38,7 +38,7 @@
         </div>
         <div class="col-span-6 sm:col-span-3 mt-5">
             <label for="tipo" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Tipo</label>
-            <select name="titular" id="titular" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autofocus required="">
+            <select name="tipo" id="tipo" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" autofocus required="">
                 <option value="">Seleccione el tipo de automotor</option>
                 @foreach ($tipos as $tipo)
                     <option value="{{$tipo}}">{{$tipo}}</option>

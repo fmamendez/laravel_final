@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreInfraccion;
+use App\Models\Automotor;
 use App\Models\Infraccion;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class InfraccionController extends Controller
 {
@@ -24,14 +27,24 @@ class InfraccionController extends Controller
     public function create()
     {
         //
+        $automotores = Automotor::all();
+        $valores = DB::select('SHOW COLUMNS FROM infracciones WHERE Field = "tipo"')[0]->Type;
+        preg_match('/^enum\((.*)\)$/', $valores, $valor);
+        $valores = explode(',', $valor[1]);
+        $tipos = array_map(function ($valor) {
+            return trim($valor, "'");
+        }, $valores);
+        return view('infracciones.create',compact('automotores','tipos'));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreInfraccion $request)
     {
         //
+        $infraccion = Infraccion::create($request->all());
+        return redirect()->route('infracciones.index',$infraccion);
     }
 
     /**
