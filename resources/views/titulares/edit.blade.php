@@ -20,11 +20,11 @@
                 placeholder="Ingrese el Nombre del Titular" required="" value="{{ old('nombre', $titulare->nombre) }}">
         </div>
         <div class="max-w-sm mt-5">
-            <label for="dni" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Documento:</label>
+            <label for="dni" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Documento</label>
             <div class="relative">
                 <input type="text" name="dni" id="dni" aria-describedby="helper-text-explanation"
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Ingrese el número de documento" pattern="^\d{8}?$" required value="{{ old('dni', $titulare->dni) }}">
+                    placeholder="Ingrese el número de documento" pattern="^\d{7}?$" required value="{{ old('dni', $titulare->dni) }}">
             </div>
             <p id="helper-text-explanation" class="mt-2 text-sm text-gray-500 dark:text-gray-400">Por favor ingresar el numero de documento.</p>
         </div>

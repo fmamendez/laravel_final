@@ -45,7 +45,7 @@
             <tbody>
                 @foreach ($automotores as $automotor)
                     <tr class="bg-white dark:bg-gray-800">
-                        <td>{{ $automotor->titular_id }}</td>
+                        <td>{{ $automotor->titular->apellido }} {{ $automotor->titular->nombre }}</td>
                         <td>{{ $automotor->marca }}</td>
                         <td>{{ $automotor->modelo }}</td>
                         <td>{{ $automotor->patente }}</td>
