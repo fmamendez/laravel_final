@@ -1,9 +1,14 @@
-@extends('layouts.plantilla')
+    @extends('layouts.plantilla')
 @section('title', 'Registro de Infracción')
 
 @section('header', 'Registar de Nueva infracción')
 
 @section('content')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.0/datepicker.min.js"></script>
+
+
+
+
     <form method="post" action="{{ route('infracciones.store') }}" enctype="multipart/form-data">
         @csrf
         <div class="col-span-6 sm:col-span-3">
@@ -28,13 +33,11 @@
                             d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
                     </svg>
                 </div>
-                <input datepicker datepicker-format="mm/dd/yyyy" type="text" id="fecha" name="fecha"
+                <input datepicker datepicker-format="yyyy-mm-dd" type="text" name="fecha" id="fecha" required
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full ps-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    placeholder="Select date">
+                    placeholder="Selecciona la fecha de la Infracción">
             </div>
-            {{-- <input type="text" name="marca" id="marca"
-                class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500"
-                placeholder="Ingrese la marca del automotor" required=""> --}}
+            
         </div>
         <div class="col-span-6 sm:col-span-3 mt-5">
             <label for="descripcion"
@@ -59,11 +62,11 @@
                 class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Guardar</button>
         </div>
     </form>
+    <script type='text/javascript'>
+        const datepickerEl = document.getElementById('fecha');
+        new Datepicker(datepickerEl, {
+            // options
+        });
+    </script>
 @endsection
 
-<script>
-    const datepickerEl = document.getElementById('fecha');
-    new Datepicker(datepickerEl, {
-        // options
-    });
-</script>

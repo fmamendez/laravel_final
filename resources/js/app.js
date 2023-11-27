@@ -1,8 +1,8 @@
 import './bootstrap';
-
-import Datepicker from 'flowbite-datepicker/Datepicker';
+import Datepicker from '@themesberg/tailwind-datepicker/Datepicker';
 
 import Alpine from 'alpinejs';
+
 
 window.Alpine = Alpine;
 
