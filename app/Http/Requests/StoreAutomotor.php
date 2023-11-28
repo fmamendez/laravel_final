@@ -23,11 +23,12 @@ class StoreAutomotor extends FormRequest
     public function rules(): array
     {
         return [
-            'marca' => 'required|string|max:100|min:2',
-            'modelo' => 'required|string|max:100|min:2',
-            'patente' => 'required|max:15|min:6',
+             'titular_id' => 'required',
+             'marca' => 'required|string|max:100|min:2',
+             'modelo' => 'required|string|max:100|min:2',
+             'patente' => 'required|max:15|min:6',
             'tipo' => [
-                'required|max:255',
+                'required',
                 Rule::in(['standar','suv','camioneta','camion']),
             ],
         ];

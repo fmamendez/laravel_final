@@ -13,7 +13,7 @@ class Automotor extends Model
     public function titular() {
         return $this->belongsTo(Titular::class);
     }
-    // public function infraccion(){
-    //     return $this->hasMany(Infraccion::class);
-    // }
+    // // public function infraccion(){
+    // //     return $this->hasMany(Infraccion::class);
+    // // }
 }

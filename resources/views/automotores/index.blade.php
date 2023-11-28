@@ -12,7 +12,7 @@
     </div>
     <div>
         <form action="{{ route('automotores.index') }}" method="get">
-            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Buscar</label>
+            <label for="busqueda" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Buscar</label>
             <div class="relative">
                 <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
                     <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
